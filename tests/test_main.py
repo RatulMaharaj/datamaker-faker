@@ -1,5 +1,5 @@
-from src.faker import Faker, Person
-import json
+from src.faker import Faker, Person, Geo
+import pytest
 
 
 def test_generate_single():
@@ -16,14 +16,18 @@ def test_generate_single():
     assert len(person.sex.generate(10)) == 10
 
 
-def test_generate_from_dict():
+@pytest.mark.parametrize("n", [1, 1_000, 100_000, 1_000_00])
+def test_generate_from_model(n):
     model = {
-        "first_name": Person().first_name,
-        "last_name": Person().last_name,
+        "name": Person().first_name,
+        "surname": Person().last_name,
         "sex": Person().sex,
+        "country": Geo().country,
+        "city": Geo().city,
     }
 
     faker = Faker(seed=123, model=model)
-    data = faker.generate(n=2)
-    # TODO: use pandas to manage orientation
-    print(json.dumps(data, indent=4))
+    data = faker.generate(n)
+    assert len(data) == n
+
+

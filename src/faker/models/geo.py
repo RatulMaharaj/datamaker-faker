@@ -1,8 +1,7 @@
-from pydantic import dataclasses
-from . import data_folder
+from .field import Field
 
 
-@dataclasses.dataclass
 class Geo:
-    city = data_folder / "geo" / "city"
-    country = data_folder / "geo" / "country"
+    def __init__(self, seed: int | None = None) -> None:
+        self.country = Field("country", "geo", seed=seed)
+        self.city = Field("city", "geo", seed=seed)

@@ -24,7 +24,7 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = ["numpy==1.26.4"]
+dependencies = ["numpy==1.26.4", "pandas"]
 
 [project.urls]
 Documentation = "https://github.com/unknown/faker#readme"
@@ -48,7 +48,7 @@ test = "pytest {args:tests} -s --durations=0"
 test-cov = "coverage run -m pytest {args:tests}"
 cov-report = ["- coverage combine", "coverage report"]
 cov = ["test-cov", "cov-report"]
-main = "python src/faker/__init__.py"
+db-build = "python src/faker/data/db.py"
 
 [[tool.hatch.envs.all.matrix]]
 python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
