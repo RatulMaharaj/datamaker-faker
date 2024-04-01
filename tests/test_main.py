@@ -1,10 +1,11 @@
-from src.faker import Faker, Person, Geo
+from src.faker import Faker, Field
 import pytest
+import json
 
 
 def test_generate_single():
-    person = Person()
-    data = person.sex.generate()
+    sex = Field("sex")
+    data = sex.generate()
 
     # check the length
     assert len(data) == 1
@@ -13,21 +14,22 @@ def test_generate_single():
     for item in data:
         assert item in ["male", "female"]
 
-    assert len(person.sex.generate(10)) == 10
+    assert len(sex.generate(10)) == 10
 
 
-@pytest.mark.parametrize("n", [1, 1_000, 100_000, 1_000_00])
+@pytest.mark.parametrize("n", [10, 100_000, 1_000_00])
 def test_generate_from_model(n):
     model = {
-        "name": Person().first_name,
-        "surname": Person().last_name,
-        "sex": Person().sex,
-        "country": Geo().country,
-        "city": Geo().city,
+        "frstnm": "first_name",
+        "srnm": "last_name",
+        "sx": "sex",
+        "ctry": "country",
+        "cty": "city",
     }
 
-    faker = Faker(seed=123, model=model)
+    faker = Faker(model, seed=123)
     data = faker.generate(n)
+
     assert len(data) == n
 
-
+    json.dumps(data, indent=4)
