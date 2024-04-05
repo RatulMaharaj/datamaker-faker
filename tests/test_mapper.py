@@ -1,4 +1,4 @@
-from faker import Faker, Field
+from datamaker_faker import Field
 
 
 def test_no_mapper():

@@ -1,6 +1,5 @@
-from src.faker import Faker, Field
+from src.datamaker_faker import Faker, Field
 import pytest
-import json
 
 
 def test_generate_single():
@@ -31,5 +30,3 @@ def test_generate_from_model(n):
     data = faker.generate(n)
 
     assert len(data) == n
-
-    json.dumps(data, indent=4)

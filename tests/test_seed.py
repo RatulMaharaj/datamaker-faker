@@ -1,4 +1,4 @@
-from src.faker import Faker
+from src.datamaker_faker import Faker
 
 
 def test_without_seed():

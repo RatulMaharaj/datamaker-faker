@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "faker"
+name = "datamaker-faker"
 dynamic = ["version"]
 description = 'A python lib for data generation'
 readme = "README.md"
@@ -27,15 +27,15 @@ classifiers = [
 dependencies = ["numpy==1.26.4", "pandas"]
 
 [project.urls]
-Documentation = "https://github.com/unknown/faker#readme"
-Issues = "https://github.com/unknown/faker/issues"
-Source = "https://github.com/unknown/faker"
+Documentation = "https://github.com/automators-com/datamaker-faker#readme"
+Issues = "https://github.com/automators-com/datamaker-faker/issues"
+Source = "https://github.com/automators-com/datamaker-faker"
 
 [tool.hatch.build.targets.sdist]
 exclude = ["/tests"]
 
 [tool.hatch.version]
-path = "src/faker/__about__.py"
+path = "src/datamaker_faker/__about__.py"
 
 [tool.hatch.envs.default]
 path = ".hatch"
@@ -48,7 +48,6 @@ test = "pytest {args:tests} -s --durations=0"
 test-cov = "coverage run -m pytest {args:tests}"
 cov-report = ["- coverage combine", "coverage report"]
 cov = ["test-cov", "cov-report"]
-db-build = "python src/faker/data/db.py"
 
 [[tool.hatch.envs.all.matrix]]
 python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
@@ -56,17 +55,17 @@ python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
 [tool.hatch.envs.types]
 dependencies = ["mypy>=1.0.0"]
 [tool.hatch.envs.types.scripts]
-check = "mypy --install-types --non-interactive {args:src/faker tests}"
+check = "mypy --install-types --non-interactive {args:src/datamaker_faker tests}"
 
 [tool.coverage.run]
-source_pkgs = ["faker", "tests"]
+source_pkgs = ["datamaker_faker", "tests"]
 branch = true
 parallel = true
-omit = ["src/faker/__about__.py"]
+omit = ["src/datamaker_faker/__about__.py"]
 
 [tool.coverage.paths]
-faker = ["src/faker", "*/faker/src/faker"]
-tests = ["tests", "*/faker/tests"]
+datamaker_faker = ["src/datamaker_faker", "*/faker/src/datamaker_faker"]
+tests = ["tests", "*/datamaker_faker/tests"]
 
 [tool.coverage.report]
 exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
