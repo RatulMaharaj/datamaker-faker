@@ -1,7 +1,11 @@
 # DataFaker
 
-[![PyPI - Version](https://img.shields.io/pypi/v/faker.svg)](https://pypi.org/project/faker)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/faker.svg)](https://pypi.org/project/faker)
+[![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v1.json)](https://github.com/charliermarsh/ruff)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
+<!-- [![PyPI - Version](https://img.shields.io/pypi/v/datamaker-faker.svg)](https://pypi.org/project/datamaker-faker)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/datamaker-faker.svg)](https://pypi.org/project/datamaker-faker) -->
 
 ---
 
