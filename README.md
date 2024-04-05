@@ -1,4 +1,4 @@
-# DataFaker
+# datamaker-faker
 
 [![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v1.json)](https://github.com/charliermarsh/ruff)
@@ -61,7 +61,8 @@ data = df.to_dict("records")
 print(json.dumps(data, indent=2))
 ```
 
-Output:
+<details>
+<summary>See generated JSON data</summary>
 
 ```json
 [
@@ -137,6 +138,8 @@ Output:
   }
 ]
 ```
+
+</details>
 
 ## Disclaimer
 
