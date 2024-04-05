@@ -147,4 +147,4 @@ This package is a work in progress and is not yet ready for production use.
 
 ## License
 
-`faker` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+`datamaker-faker` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
